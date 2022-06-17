@@ -1,0 +1,85 @@
+version: "2.2"
+services:
+
+  postgres:
+    image: postgres:14
+    command: -c 'shared_preload_libraries=pg_stat_statements'
+    environment:
+      POSTGRES_PASSWORD: pgpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata-primary:/var/lib/postgresql/data
+      - ./initdb-primary.d:/docker-entrypoint-initdb.d
+
+  replica:
+    image: postgres:14
+    command: -c 'shared_preload_libraries=pg_stat_statements'
+    environment:
+      POSTGRES_PASSWORD: pgpass-replica
+      PGUSER: postgres
+      PGPASSWORD: pgpass
+      PGHOST: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata-replica:/var/lib/postgresql/data
+      - ./initdb-replica.d:/docker-entrypoint-initdb.d
+
+  traffic:
+    image: postgres:14
+    entrypoint: ""
+    command: /usr/local/bin/traffic.sh
+    stop_signal: KILL
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: pgpass
+      PGHOST: postgres
+    volumes:
+      - ./traffic.sh:/usr/local/bin/traffic.sh
+
+  exporter-primary:
+    image: prometheuscommunity/postgres-exporter:v0.10.1
+    environment:
+      DATA_SOURCE_NAME: postgresql://postgres:pgpass@postgres:5432/postgres?sslmode=disable
+      PG_EXPORTER_EXTEND_QUERY_PATH: /mnt/queries.yaml
+    ports:
+      - "9187:9187"
+        #volumes:
+        #- ./queries.yaml:/mnt/queries.yaml
+
+  exporter-replica:
+    image: prometheuscommunity/postgres-exporter:v0.10.1
+    environment:
+      DATA_SOURCE_NAME: postgresql://postgres:pgpass@replica:5432/postgres?sslmode=disable
+      PG_EXPORTER_EXTEND_QUERY_PATH: /mnt/queries.yaml
+    ports:
+      - "9188:9187"
+    volumes:
+      - ./queries.yaml:/mnt/queries.yaml
+
+  # Observability
+  prometheus:
+    image: prom/prometheus
+    cpu_count: 1
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus:/prometheus
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:8.5.6
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
+      - ./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+      - ./grafana/dashboard.json:/var/lib/grafana/dashboards/dashboard.json
+    ports:
+      - "3000:3000"
+
+volumes:
+    pgdata-primary:
+    pgdata-replica:
+    prometheus:
+    grafana-data:

@@ -1,0 +1,595 @@
+{
+  "annotations": {
+      "list": [
+            {
+                    "builtIn": 1,
+                    "datasource": {
+                              "type": "grafana",
+                              "uid": "-- Grafana --"
+                            },
+                    "enable": true,
+                    "hide": true,
+                    "iconColor": "rgba(0, 211, 255, 1)",
+                    "name": "Annotations & Alerts",
+                    "target": {
+                              "limit": 100,
+                              "matchAny": false,
+                              "tags": [],
+                              "type": "dashboard"
+                            },
+                    "type": "dashboard"
+                  }
+          ]
+    },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "iteration": 1655457813669,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "fieldConfig": {
+                    "defaults": {
+                              "color": {
+                                          "mode": "thresholds"
+                                        },
+                              "mappings": [
+                                          {
+                                                        "options": {
+                                                                        "0": {
+                                                                                          "color": "red",
+                                                                                          "index": 0,
+                                                                                          "text": "Indisponible"
+                                                                                        },
+                                                                        "1": {
+                                                                                          "color": "green",
+                                                                                          "index": 1,
+                                                                                          "text": "Accessible"
+                                                                                        }
+                                                                      },
+                                                        "type": "value"
+                                                      }
+                                        ],
+                              "thresholds": {
+                                          "mode": "absolute",
+                                          "steps": [
+                                                        {
+                                                                        "color": "green",
+                                                                        "value": null
+                                                                      },
+                                                        {
+                                                                        "color": "red",
+                                                                        "value": 80
+                                                                      }
+                                                      ]
+                                        }
+                            },
+                    "overrides": []
+                  },
+            "gridPos": {
+                    "h": 4,
+                    "w": 12,
+                    "x": 0,
+                    "y": 0
+                  },
+            "id": 4,
+            "options": {
+                    "colorMode": "value",
+                    "graphMode": "area",
+                    "justifyMode": "auto",
+                    "orientation": "auto",
+                    "reduceOptions": {
+                              "calcs": [
+                                          "lastNotNull"
+                                        ],
+                              "fields": "",
+                              "values": false
+                            },
+                    "textMode": "auto"
+                  },
+            "pluginVersion": "8.5.6",
+            "targets": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "expr": "pg_up",
+                              "legendFormat": "{{job}}",
+                              "range": true,
+                              "refId": "A"
+                            }
+                  ],
+            "title": "Disponibilité",
+            "type": "stat"
+          },
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "fieldConfig": {
+                    "defaults": {
+                              "color": {
+                                          "mode": "thresholds"
+                                        },
+                              "custom": {
+                                          "align": "auto",
+                                          "displayMode": "auto",
+                                          "inspect": false
+                                        },
+                              "mappings": [],
+                              "thresholds": {
+                                          "mode": "absolute",
+                                          "steps": [
+                                                        {
+                                                                        "color": "green",
+                                                                        "value": null
+                                                                      },
+                                                        {
+                                                                        "color": "red",
+                                                                        "value": 80
+                                                                      }
+                                                      ]
+                                        }
+                            },
+                    "overrides": [
+                              {
+                                          "matcher": {
+                                                        "id": "byName",
+                                                        "options": "Rôle"
+                                                      },
+                                          "properties": [
+                                                        {
+                                                                        "id": "custom.width",
+                                                                        "value": 82
+                                                                      }
+                                                      ]
+                                        },
+                              {
+                                          "matcher": {
+                                                        "id": "byName",
+                                                        "options": "Version"
+                                                      },
+                                          "properties": [
+                                                        {
+                                                                        "id": "custom.width",
+                                                                        "value": 96
+                                                                      }
+                                                      ]
+                                        }
+                            ]
+                  },
+            "gridPos": {
+                    "h": 4,
+                    "w": 12,
+                    "x": 12,
+                    "y": 0
+                  },
+            "id": 2,
+            "options": {
+                    "footer": {
+                              "fields": "",
+                              "reducer": [
+                                          "sum"
+                                        ],
+                              "show": false
+                            },
+                    "showHeader": true,
+                    "sortBy": []
+                  },
+            "pluginVersion": "8.5.6",
+            "targets": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "exemplar": false,
+                              "expr": "pg_static",
+                              "format": "table",
+                              "instant": true,
+                              "range": false,
+                              "refId": "A"
+                            }
+                  ],
+            "title": "Version",
+            "transformations": [
+                    {
+                              "id": "organize",
+                              "options": {
+                                          "excludeByName": {
+                                                        "Time": true,
+                                                        "Value": true,
+                                                        "__name__": true,
+                                                        "exported_server": true,
+                                                        "instance": true,
+                                                        "server": true
+                                                      },
+                                          "indexByName": {},
+                                          "renameByName": {
+                                                        "job": "Rôle",
+                                                        "short_version": "Version",
+                                                        "version": "Détails"
+                                                      }
+                                        }
+                            }
+                  ],
+            "type": "table"
+          },
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "gridPos": {
+                    "h": 2,
+                    "w": 12,
+                    "x": 0,
+                    "y": 4
+                  },
+            "id": 8,
+            "options": {
+                    "content": "<center> <h1 style=\"text-transform: capitalize;\">${node} </h1></center>",
+                    "mode": "html"
+                  },
+            "pluginVersion": "8.5.6",
+            "repeat": "node",
+            "repeatDirection": "h",
+            "type": "text"
+          },
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "fieldConfig": {
+                    "defaults": {
+                              "color": {
+                                          "mode": "palette-classic"
+                                        },
+                              "custom": {
+                                          "axisLabel": "",
+                                          "axisPlacement": "auto",
+                                          "barAlignment": 0,
+                                          "drawStyle": "line",
+                                          "fillOpacity": 0,
+                                          "gradientMode": "none",
+                                          "hideFrom": {
+                                                        "legend": false,
+                                                        "tooltip": false,
+                                                        "viz": false
+                                                      },
+                                          "lineInterpolation": "linear",
+                                          "lineWidth": 1,
+                                          "pointSize": 5,
+                                          "scaleDistribution": {
+                                                        "type": "linear"
+                                                      },
+                                          "showPoints": "auto",
+                                          "spanNulls": false,
+                                          "stacking": {
+                                                        "group": "A",
+                                                        "mode": "none"
+                                                      },
+                                          "thresholdsStyle": {
+                                                        "mode": "off"
+                                                      }
+                                        },
+                              "mappings": [],
+                              "thresholds": {
+                                          "mode": "absolute",
+                                          "steps": [
+                                                        {
+                                                                        "color": "green",
+                                                                        "value": null
+                                                                      },
+                                                        {
+                                                                        "color": "red",
+                                                                        "value": 80
+                                                                      }
+                                                      ]
+                                        }
+                            },
+                    "overrides": []
+                  },
+            "gridPos": {
+                    "h": 8,
+                    "w": 12,
+                    "x": 0,
+                    "y": 6
+                  },
+            "id": 14,
+            "options": {
+                    "legend": {
+                              "calcs": [],
+                              "displayMode": "list",
+                              "placement": "bottom"
+                            },
+                    "tooltip": {
+                              "mode": "single",
+                              "sort": "none"
+                            }
+                  },
+            "repeat": "node",
+            "repeatDirection": "h",
+            "targets": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "expr": "pg_stat_activity_count{job=\"$node\"}",
+                              "legendFormat": "{{datname}} {{state}}",
+                              "range": true,
+                              "refId": "A"
+                            }
+                  ],
+            "title": "Connexions",
+            "type": "timeseries"
+          },
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "fieldConfig": {
+                    "defaults": {
+                              "color": {
+                                          "mode": "palette-classic"
+                                        },
+                              "custom": {
+                                          "axisLabel": "",
+                                          "axisPlacement": "auto",
+                                          "axisSoftMax": -1,
+                                          "barAlignment": 0,
+                                          "drawStyle": "line",
+                                          "fillOpacity": 0,
+                                          "gradientMode": "none",
+                                          "hideFrom": {
+                                                        "legend": false,
+                                                        "tooltip": false,
+                                                        "viz": false
+                                                      },
+                                          "lineInterpolation": "linear",
+                                          "lineWidth": 1,
+                                          "pointSize": 5,
+                                          "scaleDistribution": {
+                                                        "type": "linear"
+                                                      },
+                                          "showPoints": "auto",
+                                          "spanNulls": true,
+                                          "stacking": {
+                                                        "group": "A",
+                                                        "mode": "none"
+                                                      },
+                                          "thresholdsStyle": {
+                                                        "mode": "off"
+                                                      }
+                                        },
+                              "mappings": [],
+                              "thresholds": {
+                                          "mode": "absolute",
+                                          "steps": [
+                                                        {
+                                                                        "color": "green",
+                                                                        "value": null
+                                                                      },
+                                                        {
+                                                                        "color": "red",
+                                                                        "value": 80
+                                                                      }
+                                                      ]
+                                        }
+                            },
+                    "overrides": []
+                  },
+            "gridPos": {
+                    "h": 8,
+                    "w": 12,
+                    "x": 0,
+                    "y": 14
+                  },
+            "id": 6,
+            "options": {
+                    "legend": {
+                              "calcs": [],
+                              "displayMode": "list",
+                              "placement": "bottom"
+                            },
+                    "tooltip": {
+                              "mode": "single",
+                              "sort": "none"
+                            }
+                  },
+            "repeat": "node",
+            "repeatDirection": "h",
+            "targets": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "expr": "pg_locks_count{job=\"$node\"}",
+                              "legendFormat": "{{mode}} sur {{datname}}",
+                              "range": true,
+                              "refId": "A"
+                            }
+                  ],
+            "title": "Verrou",
+            "transformations": [],
+            "type": "timeseries"
+          },
+      {
+            "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                  },
+            "fieldConfig": {
+                    "defaults": {
+                              "color": {
+                                          "mode": "palette-classic"
+                                        },
+                              "custom": {
+                                          "axisLabel": "",
+                                          "axisPlacement": "auto",
+                                          "barAlignment": 0,
+                                          "drawStyle": "points",
+                                          "fillOpacity": 0,
+                                          "gradientMode": "none",
+                                          "hideFrom": {
+                                                        "legend": false,
+                                                        "tooltip": false,
+                                                        "viz": false
+                                                      },
+                                          "lineInterpolation": "linear",
+                                          "lineWidth": 1,
+                                          "pointSize": 5,
+                                          "scaleDistribution": {
+                                                        "type": "linear"
+                                                      },
+                                          "showPoints": "auto",
+                                          "spanNulls": false,
+                                          "stacking": {
+                                                        "group": "A",
+                                                        "mode": "none"
+                                                      },
+                                          "thresholdsStyle": {
+                                                        "mode": "off"
+                                                      }
+                                        },
+                              "mappings": [],
+                              "thresholds": {
+                                          "mode": "absolute",
+                                          "steps": [
+                                                        {
+                                                                        "color": "green",
+                                                                        "value": null
+                                                                      },
+                                                        {
+                                                                        "color": "red",
+                                                                        "value": 80
+                                                                      }
+                                                      ]
+                                        }
+                            },
+                    "overrides": [
+                              {
+                                          "matcher": {
+                                                        "id": "byName",
+                                                        "options": "Buffer Clean"
+                                                      },
+                                          "properties": [
+                                                        {
+                                                                        "id": "custom.transform",
+                                                                        "value": "negative-Y"
+                                                                      }
+                                                      ]
+                                        }
+                            ]
+                  },
+            "gridPos": {
+                    "h": 8,
+                    "w": 12,
+                    "x": 0,
+                    "y": 22
+                  },
+            "id": 19,
+            "options": {
+                    "legend": {
+                              "calcs": [],
+                              "displayMode": "list",
+                              "placement": "bottom"
+                            },
+                    "tooltip": {
+                              "mode": "single",
+                              "sort": "none"
+                            }
+                  },
+            "repeat": "node",
+            "repeatDirection": "h",
+            "targets": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "expr": "rate(pg_stat_bgwriter_checkpoints_timed{job=\"$node\"}[$__rate_interval]) > 0",
+                              "legendFormat": "Scheduled Checkpoint",
+                              "range": true,
+                              "refId": "A"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "editorMode": "code",
+                              "expr": "rate(pg_stat_bgwriter_checkpoints_req{job=\"$node\"}[$__rate_interval]) > 0",
+                              "hide": true,
+                              "legendFormat": "Requested Checkpoint",
+                              "range": true,
+                              "refId": "B"
+                            }
+                  ],
+            "title": "Checkpoint",
+            "type": "timeseries"
+          }
+    ],
+  "refresh": "10s",
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+      "list": [
+            {
+                    "current": {
+                              "selected": false,
+                              "text": "All",
+                              "value": "$__all"
+                            },
+                    "datasource": {
+                              "type": "prometheus",
+                              "uid": "PBFA97CFB590B2093"
+                            },
+                    "definition": "label_values(pg_static, job)",
+                    "hide": 0,
+                    "includeAll": true,
+                    "label": "Noeud",
+                    "multi": false,
+                    "name": "node",
+                    "options": [],
+                    "query": {
+                              "query": "label_values(pg_static, job)",
+                              "refId": "StandardVariableQuery"
+                            },
+                    "refresh": 2,
+                    "regex": "",
+                    "skipUrlSync": false,
+                    "sort": 0,
+                    "type": "query"
+                  }
+          ]
+    },
+  "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+  "timepicker": {},
+  "timezone": "",
+  "title": "New dashboard",
+  "uid": "4YHDSuCnk",
+  "version": 1,
+  "weekStart": ""
+}

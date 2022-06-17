@@ -1,0 +1,27 @@
+global:
+  scrape_interval: 5s
+  scrape_timeout: 4s
+  evaluation_interval: 5s
+scrape_configs:
+- job_name: primary
+  honor_timestamps: true
+  scrape_interval: 5s
+  scrape_timeout: 4s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - exporter-primary:9187
+    labels:
+      server: "primary"
+- job_name: replica
+  honor_timestamps: true
+  scrape_interval: 5s
+  scrape_timeout: 4s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - exporter-replica:9187
+    labels:
+      server: "replica"
