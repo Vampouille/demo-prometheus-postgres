@@ -25,3 +25,14 @@ scrape_configs:
     - exporter-replica:9187
     labels:
       server: "replica"
+- job_name: node
+  honor_timestamps: true
+  scrape_interval: 5s
+  scrape_timeout: 4s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - 172.17.0.1:9100
+    labels:
+      server: "host"
