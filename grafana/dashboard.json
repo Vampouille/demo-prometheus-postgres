@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "iteration": 1655724063424,
+  "iteration": 1655724063562,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1345,7 +1345,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 5
+                                          "y": 4
                                         },
                               "id": 70,
                               "options": {
@@ -1780,7 +1780,7 @@
             "type": "row"
           },
       {
-            "collapsed": false,
+            "collapsed": true,
             "gridPos": {
                     "h": 1,
                     "w": 24,
@@ -1788,139 +1788,348 @@
                     "y": 5
                   },
             "id": 109,
-            "panels": [],
+            "panels": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "normal"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      },
+                                          "overrides": [
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Max Connections"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "color",
+                                                                                                              "value": {
+                                                                                                                                    "fixedColor": "red",
+                                                                                                                                    "mode": "fixed"
+                                                                                                                                  }
+                                                                                                            },
+                                                                                          {
+                                                                                                              "id": "custom.lineWidth",
+                                                                                                              "value": 3
+                                                                                                            },
+                                                                                          {
+                                                                                                              "id": "custom.stacking",
+                                                                                                              "value": {
+                                                                                                                                    "group": "A",
+                                                                                                                                    "mode": "none"
+                                                                                                                                  }
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      ]
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 0,
+                                          "y": 6
+                                        },
+                              "id": 107,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "multi",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "repeat": "node",
+                              "repeatDirection": "h",
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_client_connections_count{job=\"$node\"}",
+                                                        "legendFormat": "{{appname}} @ {{client_addr}} on {{datname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_settings_max_connections{job=\"$node\"}",
+                                                        "hide": false,
+                                                        "legendFormat": "Max Connections",
+                                                        "range": true,
+                                                        "refId": "B"
+                                                      }
+                                        ],
+                              "title": "Connections",
+                              "type": "timeseries"
+                            }
+                  ],
             "title": "Connections",
             "type": "row"
           },
       {
-            "datasource": {
-                    "type": "prometheus",
-                    "uid": "PBFA97CFB590B2093"
-                  },
-            "fieldConfig": {
-                    "defaults": {
-                              "color": {
-                                          "mode": "palette-classic"
-                                        },
-                              "custom": {
-                                          "axisLabel": "",
-                                          "axisPlacement": "auto",
-                                          "barAlignment": 0,
-                                          "drawStyle": "line",
-                                          "fillOpacity": 0,
-                                          "gradientMode": "none",
-                                          "hideFrom": {
-                                                        "legend": false,
-                                                        "tooltip": false,
-                                                        "viz": false
-                                                      },
-                                          "lineInterpolation": "linear",
-                                          "lineWidth": 1,
-                                          "pointSize": 5,
-                                          "scaleDistribution": {
-                                                        "type": "linear"
-                                                      },
-                                          "showPoints": "auto",
-                                          "spanNulls": false,
-                                          "stacking": {
-                                                        "group": "A",
-                                                        "mode": "normal"
-                                                      },
-                                          "thresholdsStyle": {
-                                                        "mode": "off"
-                                                      }
-                                        },
-                              "mappings": [],
-                              "thresholds": {
-                                          "mode": "absolute",
-                                          "steps": [
-                                                        {
-                                                                        "color": "green",
-                                                                        "value": null
-                                                                      },
-                                                        {
-                                                                        "color": "red",
-                                                                        "value": 80
-                                                                      }
-                                                      ]
-                                        }
-                            },
-                    "overrides": [
-                              {
-                                          "matcher": {
-                                                        "id": "byName",
-                                                        "options": "Max Connections"
-                                                      },
-                                          "properties": [
-                                                        {
-                                                                        "id": "color",
-                                                                        "value": {
-                                                                                          "fixedColor": "red",
-                                                                                          "mode": "fixed"
-                                                                                        }
-                                                                      },
-                                                        {
-                                                                        "id": "custom.lineWidth",
-                                                                        "value": 3
-                                                                      },
-                                                        {
-                                                                        "id": "custom.stacking",
-                                                                        "value": {
-                                                                                          "group": "A",
-                                                                                          "mode": "none"
-                                                                                        }
-                                                                      }
-                                                      ]
-                                        }
-                            ]
-                  },
+            "collapsed": true,
             "gridPos": {
-                    "h": 8,
-                    "w": 12,
+                    "h": 1,
+                    "w": 24,
                     "x": 0,
                     "y": 6
                   },
-            "id": 107,
-            "options": {
-                    "legend": {
-                              "calcs": [],
-                              "displayMode": "list",
-                              "placement": "bottom"
-                            },
-                    "tooltip": {
-                              "mode": "multi",
-                              "sort": "none"
-                            }
-                  },
-            "repeat": "node",
-            "repeatDirection": "h",
-            "targets": [
+            "id": 114,
+            "panels": [
                     {
                               "datasource": {
                                           "type": "prometheus",
                                           "uid": "PBFA97CFB590B2093"
                                         },
-                              "editorMode": "code",
-                              "expr": "pg_client_connections_count{job=\"$node\"}",
-                              "legendFormat": "{{appname}} @ {{client_addr}} on {{datname}}",
-                              "range": true,
-                              "refId": "A"
-                            },
-                    {
-                              "datasource": {
-                                          "type": "prometheus",
-                                          "uid": "PBFA97CFB590B2093"
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "thresholds"
+                                                                      },
+                                                        "custom": {
+                                                                        "align": "auto",
+                                                                        "displayMode": "auto",
+                                                                        "inspect": false
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "none"
+                                                      },
+                                          "overrides": [
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Time"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 210
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "query"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 259
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Age"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "unit",
+                                                                                                              "value": "dateTimeFromNow"
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Database"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 180
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Node"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 138
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Mode"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 195
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "PID"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 176
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byName",
+                                                                                          "options": "Query"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.width",
+                                                                                                              "value": 949
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      ]
                                         },
-                              "editorMode": "code",
-                              "expr": "pg_settings_max_connections{job=\"$node\"}",
-                              "hide": false,
-                              "legendFormat": "Max Connections",
-                              "range": true,
-                              "refId": "B"
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 24,
+                                          "x": 0,
+                                          "y": 1
+                                        },
+                              "id": 116,
+                              "options": {
+                                          "footer": {
+                                                        "fields": "",
+                                                        "reducer": [
+                                                                        "sum"
+                                                                      ],
+                                                        "show": false
+                                                      },
+                                          "showHeader": true,
+                                          "sortBy": [
+                                                        {
+                                                                        "desc": true,
+                                                                        "displayName": "Age"
+                                                                      }
+                                                      ]
+                                        },
+                              "pluginVersion": "8.5.6",
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "exemplar": false,
+                                                        "expr": "pg_locks_start{ query!~\".*substring.*\"} * 1000",
+                                                        "format": "table",
+                                                        "instant": true,
+                                                        "range": false,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Locks Age",
+                              "transformations": [
+                                          {
+                                                        "id": "organize",
+                                                        "options": {
+                                                                        "excludeByName": {
+                                                                                          "Time": true,
+                                                                                          "exported_server": true,
+                                                                                          "instance": true,
+                                                                                          "server": true
+                                                                                        },
+                                                                        "indexByName": {},
+                                                                        "renameByName": {
+                                                                                          "Value": "Age",
+                                                                                          "datname": "Database",
+                                                                                          "job": "Node",
+                                                                                          "mode": "Mode",
+                                                                                          "pid": "PID",
+                                                                                          "query": "Query"
+                                                                                        }
+                                                                      }
+                                                      }
+                                        ],
+                              "type": "table"
                             }
                   ],
-            "title": "Connections",
-            "type": "timeseries"
+            "title": "Lock Age",
+            "type": "row"
           }
     ],
   "refresh": "1m",
@@ -1931,7 +2140,7 @@
       "list": [
             {
                     "current": {
-                              "selected": true,
+                              "selected": false,
                               "text": "All",
                               "value": "$__all"
                             },

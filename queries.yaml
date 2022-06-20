@@ -78,7 +78,7 @@ pg_locks:
     LEFT JOIN pg_stat_activity psa ON pl.pid = psa.pid
     WHERE datname = current_database()
     AND granted = true
-  master: true
+    AND relation IS NOT NULL
   metrics:
     - start:
         usage: "GAUGE"
