@@ -17,9 +17,6 @@ services:
     command: -c 'shared_preload_libraries=pg_stat_statements'
     environment:
       POSTGRES_PASSWORD: pgpass-replica
-      PGUSER: postgres
-      PGPASSWORD: pgpass
-      PGHOST: postgres
     ports:
       - "5433:5432"
     volumes:
@@ -43,16 +40,18 @@ services:
     environment:
       DATA_SOURCE_NAME: postgresql://postgres:pgpass@postgres:5432/postgres?sslmode=disable
       PG_EXPORTER_EXTEND_QUERY_PATH: /mnt/queries.yaml
+      PG_EXPORTER_AUTO_DISCOVER_DATABASES: "true"
     ports:
       - "9187:9187"
-        #volumes:
-        #- ./queries.yaml:/mnt/queries.yaml
+    volumes:
+      - ./queries.yaml:/mnt/queries.yaml
 
   exporter-replica:
     image: prometheuscommunity/postgres-exporter:v0.10.1
     environment:
       DATA_SOURCE_NAME: postgresql://postgres:pgpass@replica:5432/postgres?sslmode=disable
       PG_EXPORTER_EXTEND_QUERY_PATH: /mnt/queries.yaml
+      PG_EXPORTER_AUTO_DISCOVER_DATABASES: "true"
     ports:
       - "9188:9187"
     volumes:
@@ -75,6 +74,7 @@ services:
     cpu_count: 1
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./rules.yml:/etc/prometheus/rules.yml:ro
       - prometheus:/prometheus
     ports:
       - "9090:9090"

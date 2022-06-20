@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export PGUSER=postgres
+export PGPASSWORD=pgpass
+export PGHOST=postgres
+
 while [ $(pg_isready -q; echo $?) != 0 ]; do
   echo "Waiting for primary..."
   sleep 1
