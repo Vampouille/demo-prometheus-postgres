@@ -1,0 +1,31 @@
+groups:
+- name: replication
+  rules:
+  # docker-compose exec replica gosu postgres psql -c "SELECT pg_wal_replay_pause()"
+  # docker-compose exec replica gosu postgres psql -c "SELECT pg_wal_replay_resume()"
+  - alert: PGReplicationLagXLOG
+    expr: max(pg_xlog_position) - min(pg_xlog_position) > 1000000000
+    labels:
+      severity: critical
+    annotations:
+      summary: Replication Lag
+  - alert: PGReplicationLagTime
+    expr: pg_replication_replag > 60000
+    labels:
+      severity: critical
+    annotations:
+      summary: Replication Lag more than 1 min
+  - alert: PGReplicationLagBytes
+    expr: pg_replication_replay_lag > 1000000
+    labels:
+      severity: critical
+    annotations:
+      summary: Replication Lag more than 10 MB
+- name: connections
+  rules:
+  - alert: TooManyConnections
+    expr: sum by (exported_server, instance, job, server) (pg_stat_database_numbackends) / pg_settings_max_connections > 0.9
+    labels:
+      severity: critical
+    annotations:
+      summary: Too many connections
