@@ -71,7 +71,7 @@ pg_archive_wals:
         usage: "GAUGE"
         description: "Number of wal segments ready for archival"
 
-pg_locks:
+pg_locksage:
   query: |
     SELECT datname, relation::regclass AS relname, pl.pid, mode, regexp_replace(substring(query FOR 100), '[ \t\n]+', ' ', 'g') AS query, EXTRACT (EPOCH FROM xact_start) AS start
     FROM pg_locks pl
@@ -79,6 +79,7 @@ pg_locks:
     WHERE datname = current_database()
     AND granted = true
     AND relation IS NOT NULL
+    AND mode != 'AccessShareLock'
   metrics:
     - start:
         usage: "GAUGE"
