@@ -6,14 +6,6 @@ pg_is_in:
         usage: "GAUGE"
         description: "0 for master, 1 for slaves"
 
-pg_backup:
-  query: "SELECT count(*) AS fuse FROM  pg_ls_dir('/tmp/') WHERE pg_ls_dir='failed_pg_archive'"
-  master: true
-  metrics:
-    - fuse:
-        usage: "GAUGE"
-        description: "0 backup fuse is ok, 1 backup fuse is burnt"
-
 pg_xlog:
   query: "SELECT CASE WHEN pg_is_in_recovery() THEN pg_wal_lsn_diff(pg_last_wal_replay_lsn(), '0/0') ELSE pg_wal_lsn_diff(pg_current_wal_flush_lsn(), '0/0') END AS position"
   master: true
@@ -78,6 +70,34 @@ pg_archive_wals:
     - ready:
         usage: "GAUGE"
         description: "Number of wal segments ready for archival"
+
+pg_locks:
+  query: |
+    SELECT datname, relation::regclass AS relname, pl.pid, mode, regexp_replace(substring(query FOR 100), '[ \t\n]+', ' ', 'g') AS query, EXTRACT (EPOCH FROM xact_start) AS start
+    FROM pg_locks pl
+    LEFT JOIN pg_stat_activity psa ON pl.pid = psa.pid
+    WHERE datname = current_database()
+    AND granted = true
+  master: true
+  metrics:
+    - start:
+        usage: "GAUGE"
+        description: "Start time of lock"
+    - datname:
+        usage: "LABEL"
+        description: "Name of database"
+    - relname:
+        usage: "LABEL"
+        description: "Name of the table"
+    - pid:
+        usage: "LABEL"
+        description: "Process Identifier"
+    - mode:
+        usage: "LABEL"
+        description: "Lock mode"
+    - query:
+        usage: "LABEL"
+        description: "SQL Query"
 
 
 pg_stat_user_tables:
