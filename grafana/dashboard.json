@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "iteration": 1655724063656,
+  "iteration": 1655794060003,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -350,7 +350,7 @@
                                           "h": 2,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 2
+                                          "y": 8
                                         },
                               "id": 8,
                               "options": {
@@ -421,7 +421,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 4
+                                          "y": 10
                                         },
                               "id": 14,
                               "options": {
@@ -513,7 +513,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 12
+                                          "y": 18
                                         },
                               "id": 6,
                               "options": {
@@ -618,7 +618,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 20
+                                          "y": 26
                                         },
                               "id": 19,
                               "options": {
@@ -721,7 +721,7 @@
                                           "h": 7,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 28
+                                          "y": 34
                                         },
                               "id": 25,
                               "options": {
@@ -837,7 +837,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 35
+                                          "y": 41
                                         },
                               "id": 32,
                               "options": {
@@ -940,8 +940,7 @@
                                                                         "mode": "absolute",
                                                                         "steps": [
                                                                                           {
-                                                                                                              "color": "green",
-                                                                                                              "value": null
+                                                                                                              "color": "green"
                                                                                                             },
                                                                                           {
                                                                                                               "color": "red",
@@ -1099,8 +1098,7 @@
                                                                         "mode": "absolute",
                                                                         "steps": [
                                                                                           {
-                                                                                                              "color": "green",
-                                                                                                              "value": null
+                                                                                                              "color": "green"
                                                                                                             },
                                                                                           {
                                                                                                               "color": "red",
@@ -1217,8 +1215,7 @@
                                                                         "mode": "absolute",
                                                                         "steps": [
                                                                                           {
-                                                                                                              "color": "red",
-                                                                                                              "value": null
+                                                                                                              "color": "red"
                                                                                                             },
                                                                                           {
                                                                                                               "color": "green",
@@ -1344,7 +1341,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 4
+                                          "y": 52
                                         },
                               "id": 70,
                               "options": {
@@ -1450,7 +1447,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 6
+                                          "y": 11
                                         },
                               "id": 89,
                               "options": {
@@ -1540,7 +1537,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 12,
-                                          "y": 6
+                                          "y": 11
                                         },
                               "id": 87,
                               "options": {
@@ -1630,7 +1627,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 0,
-                                          "y": 14
+                                          "y": 19
                                         },
                               "id": 83,
                               "options": {
@@ -1735,7 +1732,7 @@
                                           "h": 8,
                                           "w": 12,
                                           "x": 12,
-                                          "y": 14
+                                          "y": 19
                                         },
                               "id": 85,
                               "options": {
@@ -1872,9 +1869,9 @@
                                         },
                               "gridPos": {
                                           "h": 8,
-                                          "w": 12,
+                                          "w": 24,
                                           "x": 0,
-                                          "y": 6
+                                          "y": 13
                                         },
                               "id": 107,
                               "options": {
@@ -2066,7 +2063,7 @@
                                           "h": 8,
                                           "w": 24,
                                           "x": 0,
-                                          "y": 7
+                                          "y": 14
                                         },
                               "id": 116,
                               "options": {
@@ -2129,6 +2126,1048 @@
                   ],
             "title": "Lock Age",
             "type": "row"
+          },
+      {
+            "collapsed": true,
+            "gridPos": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 13
+                  },
+            "id": 165,
+            "panels": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 0,
+                                          "y": 14
+                                        },
+                              "id": 167,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_stat_user_tables_n_dead_tup{job=\"primary\"}",
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "sum(pg_stat_user_tables_n_dead_tup{job=\"primary\"})",
+                                                        "hide": false,
+                                                        "legendFormat": "Total dead tuples",
+                                                        "range": true,
+                                                        "refId": "B"
+                                                      }
+                                        ],
+                              "title": "Dead tuples",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "thresholds"
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "percentunit"
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 12,
+                                          "y": 14
+                                        },
+                              "id": 169,
+                              "options": {
+                                          "colorMode": "value",
+                                          "graphMode": "area",
+                                          "justifyMode": "auto",
+                                          "orientation": "auto",
+                                          "reduceOptions": {
+                                                        "calcs": [
+                                                                        "lastNotNull"
+                                                                      ],
+                                                        "fields": "",
+                                                        "values": false
+                                                      },
+                                          "textMode": "auto"
+                                        },
+                              "pluginVersion": "8.5.6",
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "expr": "sum(pg_stat_user_tables_n_dead_tup{job=\"primary\"}) / sum(pg_stat_user_tables_n_live_tup{job=\"primary\"})",
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Global Fragmentation",
+                              "type": "stat"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 0,
+                                          "y": 22
+                                        },
+                              "id": 149,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_stat_user_tables_n_mod_since_analyze",
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Modification Since Analyse",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "fixedColor": "red",
+                                                                        "mode": "fixed"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "bars",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      },
+                                          "overrides": [
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byRegexp",
+                                                                                          "options": ".*Vacuum.*"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "color",
+                                                                                                              "value": {
+                                                                                                                                    "fixedColor": "red",
+                                                                                                                                    "mode": "fixed"
+                                                                                                                                  }
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byRegexp",
+                                                                                          "options": ".*Analyse.*"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "color",
+                                                                                                              "value": {
+                                                                                                                                    "fixedColor": "green",
+                                                                                                                                    "mode": "fixed"
+                                                                                                                                  }
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        {
+                                                                        "__systemRef": "hideSeriesFrom",
+                                                                        "matcher": {
+                                                                                          "id": "byNames",
+                                                                                          "options": {
+                                                                                                              "mode": "exclude",
+                                                                                                              "names": [
+                                                                                                                                    "organisme public.data AUTO Analyse"
+                                                                                                                                  ],
+                                                                                                              "prefix": "All except:",
+                                                                                                              "readOnly": true
+                                                                                                            }
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "custom.hideFrom",
+                                                                                                              "value": {
+                                                                                                                                    "legend": false,
+                                                                                                                                    "tooltip": false,
+                                                                                                                                    "viz": true
+                                                                                                                                  }
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      ]
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 12,
+                                          "y": 22
+                                        },
+                              "id": 133,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "(rate(pg_stat_user_tables_vacuum_count{job=\"primary\"}[20s]) > 0) / (rate(pg_stat_user_tables_vacuum_count{job=\"primary\"}[20s]) > 0)",
+                                                        "hide": false,
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}} Vacuum",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "(rate(pg_stat_user_tables_autovacuum_count{job=\"primary\"}[20s]) > 0) / (rate(pg_stat_user_tables_autovacuum_count{job=\"primary\"}[20s]) > 0)",
+                                                        "hide": false,
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}} AUTO Vacuum",
+                                                        "range": true,
+                                                        "refId": "B"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "(rate(pg_stat_user_tables_analyze_count{job=\"primary\"}[20s]) > 0) / (rate(pg_stat_user_tables_analyze_count{job=\"primary\"}[20s]) > 0)",
+                                                        "hide": false,
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}} Analyse",
+                                                        "range": true,
+                                                        "refId": "C"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "(rate(pg_stat_user_tables_autoanalyze_count{job=\"primary\"}[20s]) > 0) / (rate(pg_stat_user_tables_autoanalyze_count{job=\"primary\"}[20s]) > 0)",
+                                                        "hide": false,
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}} AUTO Analyse",
+                                                        "range": true,
+                                                        "refId": "D"
+                                                      }
+                                        ],
+                              "title": "Maintenance events",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "percentunit"
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 0,
+                                          "y": 30
+                                        },
+                              "id": 141,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_stat_user_tables_n_dead_tup / (pg_stat_user_tables_n_live_tup + pg_stat_user_tables_n_dead_tup)",
+                                                        "legendFormat": "{{datname}} {{schemaname}} {{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Table fragmentation",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "log": 2,
+                                                                                          "type": "log"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "percentunit"
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 12,
+                                          "y": 30
+                                        },
+                              "id": 157,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_stat_user_tables_n_dead_tup{job=\"primary\"} /\n(\n    (pg_stat_user_tables_n_live_tup{job=\"primary\"} *\n     ignoring (datname,relname,schemaname) group_left (server) pg_settings_autovacuum_vacuum_scale_factor{job=\"primary\"}\n    ) + ignoring (datname,relname,schemaname) group_left (server) pg_settings_autovacuum_vacuum_threshold{job=\"primary\"}\n)",
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Auto Vacuum trigger",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "percentunit"
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 12,
+                                          "x": 0,
+                                          "y": 38
+                                        },
+                              "id": 131,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_stat_user_tables_seq_scan / pg_stat_user_tables_idx_scan",
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Seq Scan ratio",
+                              "type": "timeseries"
+                            }
+                  ],
+            "title": "Fragmentation and maintenance",
+            "type": "row"
+          },
+      {
+            "collapsed": true,
+            "gridPos": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 14
+                  },
+            "id": 171,
+            "panels": [
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "palette-classic"
+                                                                      },
+                                                        "custom": {
+                                                                        "axisLabel": "",
+                                                                        "axisPlacement": "auto",
+                                                                        "barAlignment": 0,
+                                                                        "drawStyle": "line",
+                                                                        "fillOpacity": 0,
+                                                                        "gradientMode": "none",
+                                                                        "hideFrom": {
+                                                                                          "legend": false,
+                                                                                          "tooltip": false,
+                                                                                          "viz": false
+                                                                                        },
+                                                                        "lineInterpolation": "linear",
+                                                                        "lineWidth": 1,
+                                                                        "pointSize": 5,
+                                                                        "scaleDistribution": {
+                                                                                          "type": "linear"
+                                                                                        },
+                                                                        "showPoints": "auto",
+                                                                        "spanNulls": false,
+                                                                        "stacking": {
+                                                                                          "group": "A",
+                                                                                          "mode": "none"
+                                                                                        },
+                                                                        "thresholdsStyle": {
+                                                                                          "mode": "off"
+                                                                                        }
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      },
+                                                        "unit": "bytes"
+                                                      },
+                                          "overrides": []
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 24,
+                                          "x": 0,
+                                          "y": 47
+                                        },
+                              "id": 173,
+                              "options": {
+                                          "legend": {
+                                                        "calcs": [],
+                                                        "displayMode": "list",
+                                                        "placement": "bottom"
+                                                      },
+                                          "tooltip": {
+                                                        "mode": "single",
+                                                        "sort": "none"
+                                                      }
+                                        },
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "expr": "pg_table_size_total_bytes{job=\"primary\", schemaname!~\"pg_catalog|information_schema\"}",
+                                                        "legendFormat": "{{datname}} {{schemaname}}.{{relname}}",
+                                                        "range": true,
+                                                        "refId": "A"
+                                                      }
+                                        ],
+                              "title": "Table size",
+                              "type": "timeseries"
+                            },
+                    {
+                              "datasource": {
+                                          "type": "prometheus",
+                                          "uid": "PBFA97CFB590B2093"
+                                        },
+                              "fieldConfig": {
+                                          "defaults": {
+                                                        "color": {
+                                                                        "mode": "thresholds"
+                                                                      },
+                                                        "custom": {
+                                                                        "align": "auto",
+                                                                        "displayMode": "auto",
+                                                                        "inspect": false
+                                                                      },
+                                                        "mappings": [],
+                                                        "thresholds": {
+                                                                        "mode": "absolute",
+                                                                        "steps": [
+                                                                                          {
+                                                                                                              "color": "green",
+                                                                                                              "value": null
+                                                                                                            },
+                                                                                          {
+                                                                                                              "color": "red",
+                                                                                                              "value": 80
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      },
+                                          "overrides": [
+                                                        {
+                                                                        "matcher": {
+                                                                                          "id": "byRegexp",
+                                                                                          "options": ".*Size"
+                                                                                        },
+                                                                        "properties": [
+                                                                                          {
+                                                                                                              "id": "unit",
+                                                                                                              "value": "bytes"
+                                                                                                            }
+                                                                                        ]
+                                                                      }
+                                                      ]
+                                        },
+                              "gridPos": {
+                                          "h": 8,
+                                          "w": 24,
+                                          "x": 0,
+                                          "y": 55
+                                        },
+                              "id": 175,
+                              "options": {
+                                          "footer": {
+                                                        "fields": "",
+                                                        "reducer": [
+                                                                        "sum"
+                                                                      ],
+                                                        "show": false
+                                                      },
+                                          "showHeader": true
+                                        },
+                              "pluginVersion": "8.5.6",
+                              "targets": [
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "exemplar": false,
+                                                        "expr": "pg_table_size_table_bytes{job=\"primary\", schemaname!~\"pg_catalog|information_schema\"}",
+                                                        "format": "table",
+                                                        "instant": true,
+                                                        "range": false,
+                                                        "refId": "A"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "exemplar": false,
+                                                        "expr": "pg_table_size_toast_bytes{job=\"primary\", schemaname!~\"pg_catalog|information_schema\"}",
+                                                        "format": "table",
+                                                        "hide": false,
+                                                        "instant": true,
+                                                        "range": false,
+                                                        "refId": "B"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "exemplar": false,
+                                                        "expr": "pg_table_size_index_bytes{job=\"primary\", schemaname!~\"pg_catalog|information_schema\"}",
+                                                        "format": "table",
+                                                        "hide": false,
+                                                        "instant": true,
+                                                        "range": false,
+                                                        "refId": "C"
+                                                      },
+                                          {
+                                                        "datasource": {
+                                                                        "type": "prometheus",
+                                                                        "uid": "PBFA97CFB590B2093"
+                                                                      },
+                                                        "editorMode": "code",
+                                                        "exemplar": false,
+                                                        "expr": "pg_table_size_total_bytes{job=\"primary\", schemaname!~\"pg_catalog|information_schema\"}",
+                                                        "format": "table",
+                                                        "hide": false,
+                                                        "instant": true,
+                                                        "range": false,
+                                                        "refId": "D"
+                                                      }
+                                        ],
+                              "title": "Table Size",
+                              "transformations": [
+                                          {
+                                                        "id": "seriesToColumns",
+                                                        "options": {
+                                                                        "byField": "relname"
+                                                                      }
+                                                      },
+                                          {
+                                                        "id": "organize",
+                                                        "options": {
+                                                                        "excludeByName": {
+                                                                                          "Time 1": true,
+                                                                                          "Time 2": true,
+                                                                                          "Time 3": true,
+                                                                                          "Time 4": true,
+                                                                                          "Value #A": false,
+                                                                                          "__name__ 1": true,
+                                                                                          "__name__ 2": true,
+                                                                                          "__name__ 3": true,
+                                                                                          "__name__ 4": true,
+                                                                                          "datname 2": true,
+                                                                                          "datname 3": true,
+                                                                                          "datname 4": true,
+                                                                                          "exported_server 1": true,
+                                                                                          "exported_server 2": true,
+                                                                                          "exported_server 3": true,
+                                                                                          "exported_server 4": true,
+                                                                                          "instance 1": true,
+                                                                                          "instance 2": true,
+                                                                                          "instance 3": true,
+                                                                                          "instance 4": true,
+                                                                                          "job 1": true,
+                                                                                          "job 2": true,
+                                                                                          "job 3": true,
+                                                                                          "job 4": true,
+                                                                                          "relname": false,
+                                                                                          "schemaname 2": true,
+                                                                                          "schemaname 3": true,
+                                                                                          "schemaname 4": true,
+                                                                                          "server 1": true,
+                                                                                          "server 2": true,
+                                                                                          "server 3": true,
+                                                                                          "server 4": true
+                                                                                        },
+                                                                        "indexByName": {
+                                                                                          "Time 1": 0,
+                                                                                          "Time 2": 10,
+                                                                                          "Time 3": 19,
+                                                                                          "Time 4": 28,
+                                                                                          "Value #A": 9,
+                                                                                          "Value #B": 18,
+                                                                                          "Value #C": 27,
+                                                                                          "Value #D": 36,
+                                                                                          "__name__ 1": 1,
+                                                                                          "__name__ 2": 11,
+                                                                                          "__name__ 3": 20,
+                                                                                          "__name__ 4": 29,
+                                                                                          "datname 1": 2,
+                                                                                          "datname 2": 12,
+                                                                                          "datname 3": 21,
+                                                                                          "datname 4": 30,
+                                                                                          "exported_server 1": 3,
+                                                                                          "exported_server 2": 13,
+                                                                                          "exported_server 3": 22,
+                                                                                          "exported_server 4": 31,
+                                                                                          "instance 1": 4,
+                                                                                          "instance 2": 14,
+                                                                                          "instance 3": 23,
+                                                                                          "instance 4": 32,
+                                                                                          "job 1": 5,
+                                                                                          "job 2": 15,
+                                                                                          "job 3": 24,
+                                                                                          "job 4": 33,
+                                                                                          "relname": 8,
+                                                                                          "schemaname 1": 6,
+                                                                                          "schemaname 2": 16,
+                                                                                          "schemaname 3": 25,
+                                                                                          "schemaname 4": 34,
+                                                                                          "server 1": 7,
+                                                                                          "server 2": 17,
+                                                                                          "server 3": 26,
+                                                                                          "server 4": 35
+                                                                                        },
+                                                                        "renameByName": {
+                                                                                          "Value #A": "Data Size",
+                                                                                          "Value #B": "Toast Size",
+                                                                                          "Value #C": "Index Size",
+                                                                                          "Value #D": "Total Size",
+                                                                                          "datname 1": "Database",
+                                                                                          "relname": "Table",
+                                                                                          "schemaname 1": "Schema"
+                                                                                        }
+                                                                      }
+                                                      }
+                                        ],
+                              "type": "table"
+                            }
+                  ],
+            "title": "Table size",
+            "type": "row"
           }
     ],
   "refresh": "1m",
@@ -2140,8 +3179,8 @@
             {
                     "current": {
                               "selected": false,
-                              "text": "All",
-                              "value": "$__all"
+                              "text": "replica",
+                              "value": "replica"
                             },
                     "datasource": {
                               "type": "prometheus",
