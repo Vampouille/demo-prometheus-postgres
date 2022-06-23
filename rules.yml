@@ -29,3 +29,12 @@ groups:
       severity: critical
     annotations:
       summary: Too many connections
+- name: tables
+  rules:
+  - alert: PGFatIndex
+    expr: pg_table_size_index_bytes{schemaname!~"pg_catalog|information_schema"} > (pg_table_size_table_bytes{schemaname!~"pg_catalog|information_schema"} * 10)
+    labels:
+      severity: critical
+    annotations:
+      summary: Index is far bigger than data, REINDEX needed
+
